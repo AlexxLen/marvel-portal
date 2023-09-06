@@ -1,0 +1,2 @@
+Доделать дз:
+seo optimization
