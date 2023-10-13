@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../header/Header';
 
 import { Suspense } from 'react';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 import { Navigate } from 'react-router-dom';
 
 const NotFoundPage = React.lazy(() => import('../../pages/notFoundPage/NotFoundPage'));
