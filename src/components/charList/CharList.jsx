@@ -6,13 +6,28 @@ import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../Spinner/Spinner';
 
+const setContent = (process, Component, newItemLoading) => {
+	switch (process) {
+		case 'waiting':
+			return <Spinner />;
+		case 'loading':
+			return newItemLoading ? <Component /> : <Spinner />;
+		case 'confirmed':
+			return <Component />;
+		case 'error':
+			return <ErrorMessage />;
+		default:
+			throw new Error('Unexpected process state');
+	}
+};
+
 const CharList = ({ onCharSelected }) => {
 	const [charList, setCharList] = React.useState([]);
 	const [newItemLoading, setNewItemLoading] = React.useState(false);
 	const [offset, setOffset] = React.useState(291);
 	const [charEnded, setCharEnded] = React.useState(false);
 
-	const { loading, error, getAllCharacters } = useMarvelService();
+	const { getAllCharacters, process, setProcess } = useMarvelService();
 
 	React.useEffect(() => {
 		onRequest(offset, true);
@@ -20,7 +35,9 @@ const CharList = ({ onCharSelected }) => {
 
 	const onRequest = (offset, initial) => {
 		setNewItemLoading(!initial);
-		getAllCharacters(offset).then(onCharListLoaded);
+		getAllCharacters(offset)
+			.then(onCharListLoaded)
+			.then(() => setProcess('confirmed'));
 	};
 
 	const onCharListLoaded = (newCharList) => {
@@ -78,16 +95,13 @@ const CharList = ({ onCharSelected }) => {
 		return <ul className="char__grid">{items}</ul>;
 	};
 
-	const items = renderItems(charList);
-
-	const errorMessage = error ? <ErrorMessage /> : null;
-	const spinner = loading && !newItemLoading ? <Spinner /> : null;
+	const elements = React.useMemo(() => {
+		return setContent(process, () => renderItems(charList), newItemLoading);
+	}, [process]);
 
 	return (
 		<div className="char__list">
-			{errorMessage}
-			{spinner}
-			{items}
+			{elements}
 			<button
 				className="button button__main button__long"
 				disabled={newItemLoading}

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import './notFound.scss';
+import './notFoundPage.scss';
 import ErrorMessage from '../../components/errorMessage/ErrorMessage';
 import { Link } from 'react-router-dom';
 
-const NotFound = () => {
+const NotFoundPage = () => {
 	return (
 		<>
 			<Helmet>
@@ -21,4 +21,4 @@ const NotFound = () => {
 	);
 };
 
-export default NotFound;
+export default NotFoundPage;

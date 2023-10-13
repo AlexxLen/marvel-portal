@@ -6,12 +6,12 @@ import Header from '../header/Header';
 import { Suspense } from 'react';
 import Spinner from '../Spinner/Spinner';
 import { Navigate } from 'react-router-dom';
-import SingleCharPage from '../../pages/singleCharPage/SingleCharPage';
 
-const NotFound = React.lazy(() => import('../../pages/notFound/NotFound'));
+const NotFoundPage = React.lazy(() => import('../../pages/notFoundPage/NotFoundPage'));
 const MainPage = React.lazy(() => import('../../pages/MainPage'));
 const ComicsPage = React.lazy(() => import('../../pages/ComicsPage'));
 const SingleComic = React.lazy(() => import('../../pages/singleComic/SingleComic'));
+const SingleCharPage = React.lazy(() => import('../../pages/singleCharPage/SingleCharPage'));
 
 // 714, 736    716, 752
 
@@ -28,7 +28,7 @@ const App = () => {
 							<Route path="/comics" element={<ComicsPage />} />
 							<Route path="/comics/:id" element={<SingleComic />} />
 							<Route path="/characters/:id" element={<SingleCharPage />} />
-							<Route path="*" element={<NotFound />} />
+							<Route path="*" element={<NotFoundPage />} />
 						</Routes>
 					</main>
 				</div>
