@@ -5,7 +5,7 @@ import './charInfo.scss';
 import useMarvelService from '../../services/MarvelService';
 
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 import Skeleton from '../skeleton/Skeleton';
 import { Link } from 'react-router-dom';
 

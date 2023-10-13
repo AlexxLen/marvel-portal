@@ -1,6 +1,5 @@
 import React from 'react';
 import './searchCharacterForm.scss';
-import { ButtonToolbar } from 'react-bootstrap';
 import useMarvelService from '../../services/MarvelService';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';

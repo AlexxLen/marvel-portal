@@ -5,7 +5,7 @@ import xMen from '../../assets/img/x-men.png';
 import useMarvelService from '../../services/MarvelService';
 import { Link } from 'react-router-dom';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 
 const ComicsList = () => {
 	const [comicsList, setComicsList] = React.useState([]);

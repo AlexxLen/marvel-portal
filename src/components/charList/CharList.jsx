@@ -4,7 +4,7 @@ import './charList.scss';
 import useMarvelService from '../../services/MarvelService';
 
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 
 const setContent = (process, Component, newItemLoading) => {
 	switch (process) {

@@ -6,7 +6,7 @@ import useMarvelService from '../../services/MarvelService';
 import mjolnir from '../../assets/img/mjolnir.png';
 
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 
 const RandomChar = () => {
 	const [char, setChar] = React.useState({});
