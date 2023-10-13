@@ -5,7 +5,7 @@ import './singleCharPage.scss';
 import { useParams } from 'react-router-dom';
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../../components/errorMessage/ErrorMessage';
-import Spinner from '../../components/Spinner/Spinner';
+import Spinner from '../../components/spinner/Spinner';
 import AppBunner from '../../components/appBanner/AppBanner';
 import { Link } from 'react-router-dom';
 

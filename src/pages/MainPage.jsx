@@ -6,7 +6,7 @@ import decoration from '../assets/img/vision.png';
 import RandomChar from '../components/randomChar/RandomChar';
 import CharList from '../components/charList/CharList';
 import CharInfo from '../components/charInfo/CharInfo';
-import ErrorBoundary from '../components/errorBoundary/errorBoundary';
+import ErrorBoundary from '../components/errorBoundary/ErrorBoundary';
 import SearchCharacterForm from '../components/searchCharacterForm/SearchCharacterForm';
 
 const MainPage = () => {
