@@ -4,11 +4,12 @@ const useMarvelService = () => {
 	const { loading, request, error, clearError, process, setProcess } = useHttp();
 
 	const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-	const _apiKey = 'apikey=10d87c1c80be62f4ff27aa03d5f4c617';
+	const _apiKey = `apikey=${import.meta.env.VITE_API_KEY}`;
 	const _baseCharOffset = 291;
 	const _baseComicOffset = 1000;
 
 	const getAllCharacters = async (offset = _baseCharOffset) => {
+		console.log(_apiKey);
 		const res = await request(`${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`);
 		return res.data.results.map(_transformCharacter);
 	};
